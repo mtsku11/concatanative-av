@@ -1,0 +1,12 @@
+{
+  "name": "concatenative-av",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Corpus-based audiovisual concatenative synthesis instrument",
+  "scripts": {
+    "build:corpus": "node tools/corpus-builder/index.js"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0"
+  }
+}
