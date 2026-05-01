@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Concatenative AV Corpus Browser</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <header class="panel panel-header">
+          <p class="eyebrow">Corpus Browser</p>
+          <h1>Concatenative AV</h1>
+          <p id="status-line">Loading corpus…</p>
+        </header>
+
+        <section class="panel controls-panel">
+          <label class="field-row">
+            <span>Distance Mode</span>
+            <select id="distance-mode-select">
+              <option value="balanced">Balanced</option>
+              <option value="audio">Audio Focus</option>
+              <option value="pitch">Pitch Focus</option>
+              <option value="video">Video Focus</option>
+              <option value="joint">Joint Focus</option>
+            </select>
+          </label>
+          <label class="range-row">
+            <span>Pitch Gate</span>
+            <input id="pitch-confidence-input" type="range" min="0" max="1" step="0.01" value="0" />
+            <output id="pitch-confidence-output"></output>
+          </label>
+          <label class="range-row video-range-row">
+            <span>Video Fade</span>
+            <input id="video-crossfade-input" type="range" min="0" max="240" step="5" value="60" />
+            <output id="video-crossfade-output"></output>
+          </label>
+        </section>
+
+        <section class="panel grain-panel">
+          <h2>Grain Engine</h2>
+          <div class="control-grid">
+            <label class="range-row">
+              <span>Rate</span>
+              <input id="grain-rate-input" type="range" min="1" max="40" step="1" value="14" />
+              <output id="grain-rate-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Duration</span>
+              <input id="grain-duration-input" type="range" min="20" max="2000" step="5" value="120" />
+              <output id="grain-duration-output"></output>
+            </label>
+            <label class="field-row compact">
+              <span>Visual Blend</span>
+              <select id="grain-blend-mode-select">
+                <option value="source-over">Normal</option>
+                <option value="lighter">Add</option>
+                <option value="screen">Screen</option>
+                <option value="divide">Divide</option>
+                <option value="overlay">Overlay</option>
+                <option value="difference">Difference</option>
+                <option value="exclusion">Exclusion</option>
+              </select>
+            </label>
+            <label class="field-row compact">
+              <span>Mode</span>
+              <select id="grain-mode-select">
+                <option value="explore">Explore</option>
+                <option value="freeze">Freeze</option>
+                <option value="stutter">Stutter</option>
+              </select>
+            </label>
+            <label class="range-row">
+              <span>Feedback</span>
+              <input id="grain-feedback-input" type="range" min="0" max="0.9" step="0.01" value="0" />
+              <output id="grain-feedback-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Decay</span>
+              <input id="grain-decay-input" type="range" min="40" max="2000" step="10" value="450" />
+              <output id="grain-decay-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Attack</span>
+              <input id="grain-attack-input" type="range" min="0" max="150" step="1" value="8" />
+              <output id="grain-attack-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Release</span>
+              <input id="grain-release-input" type="range" min="0" max="250" step="1" value="35" />
+              <output id="grain-release-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Gain</span>
+              <input id="grain-gain-input" type="range" min="0" max="1" step="0.01" value="0.75" />
+              <output id="grain-gain-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Pitch</span>
+              <input id="grain-pitch-input" type="range" min="-24" max="24" step="1" value="0" />
+              <output id="grain-pitch-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Pitch Rand</span>
+              <input id="grain-pitch-random-input" type="range" min="0" max="24" step="1" value="0" />
+              <output id="grain-pitch-random-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Neighbor Jitter</span>
+              <input id="grain-jitter-input" type="range" min="0" max="8" step="1" value="0" />
+              <output id="grain-jitter-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Continuity</span>
+              <input id="grain-continuity-input" type="range" min="0" max="1" step="0.01" value="0.15" />
+              <output id="grain-continuity-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Repeat Pen</span>
+              <input id="grain-repetition-penalty-input" type="range" min="0" max="1" step="0.01" value="0" />
+              <output id="grain-repetition-penalty-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Source Pen</span>
+              <input id="grain-source-switch-penalty-input" type="range" min="0" max="1" step="0.01" value="0" />
+              <output id="grain-source-switch-penalty-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Stutter</span>
+              <input id="grain-stutter-count-input" type="range" min="2" max="16" step="1" value="4" />
+              <output id="grain-stutter-count-output"></output>
+            </label>
+            <label class="range-row">
+              <span>Voices</span>
+              <input id="grain-voices-input" type="range" min="1" max="64" step="1" value="32" />
+              <output id="grain-voices-output"></output>
+            </label>
+          </div>
+        </section>
+
+        <section class="panel details-panel">
+          <h2>Selection</h2>
+          <dl id="selection-summary" class="summary-grid"></dl>
+        </section>
+
+        <section class="panel list-panel">
+          <h2>Nearest Units</h2>
+          <p id="nearest-mode-summary" class="hint"></p>
+          <ol id="nearest-list" class="unit-list"></ol>
+        </section>
+      </aside>
+
+      <main class="main-column">
+        <section class="panel preview-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Preview</p>
+              <h2>Video Slice</h2>
+            </div>
+            <p id="video-status" class="hint">Idle</p>
+          </div>
+          <div class="video-canvas-stack">
+            <canvas id="video-fade-canvas" class="video-layer" width="1280" height="720" aria-hidden="true"></canvas>
+            <canvas id="video-canvas" class="video-layer" width="1280" height="720"></canvas>
+          </div>
+        </section>
+
+        <section class="panel scatter-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Embedding</p>
+              <h2>Unit Scatterplot</h2>
+            </div>
+            <p class="hint">Drag across the plot to select the nearest mapped unit.</p>
+          </div>
+          <div class="axis-grid">
+            <label class="field-row compact">
+              <span>X Axis</span>
+              <select id="x-axis-select"></select>
+            </label>
+            <label class="field-row compact">
+              <span>Y Axis</span>
+              <select id="y-axis-select"></select>
+            </label>
+          </div>
+          <canvas id="scatter-canvas" width="960" height="560"></canvas>
+        </section>
+
+        <section class="panel descriptor-panel">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Descriptors</p>
+              <h2>Normalized / Raw</h2>
+            </div>
+          </div>
+          <div id="descriptor-tables" class="descriptor-tables"></div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>
