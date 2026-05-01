@@ -1,0 +1,486 @@
+{
+  "version": 1,
+  "name": "canaries",
+  "createdAt": "2026-04-30T10:31:14.044Z",
+  "sourceLabels": [
+    "videoplayback (1).mp4",
+    "videoplayback (2).mp4",
+    "videoplayback.mp4"
+  ],
+  "sourceMetadata": [
+    {
+      "label": "videoplayback (1).mp4",
+      "durationMs": 7988,
+      "frameRate": 30,
+      "width": 360,
+      "height": 640,
+      "sampleRate": 44100,
+      "channelCount": 2,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "container": "mov,mp4,m4a,3gp,3g2,mj2"
+    },
+    {
+      "label": "videoplayback (2).mp4",
+      "durationMs": 7639,
+      "frameRate": 30,
+      "width": 360,
+      "height": 640,
+      "sampleRate": 44100,
+      "channelCount": 2,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "container": "mov,mp4,m4a,3gp,3g2,mj2"
+    },
+    {
+      "label": "videoplayback.mp4",
+      "durationMs": 7488,
+      "frameRate": 30,
+      "width": 360,
+      "height": 640,
+      "sampleRate": 48000,
+      "channelCount": 2,
+      "videoCodec": "h264",
+      "audioCodec": "aac",
+      "container": "mov,mp4,m4a,3gp,3g2,mj2"
+    }
+  ],
+  "unitCount": 215,
+  "queries": [
+    {
+      "queryUnitId": "videoplayback-1-u0000",
+      "sourceId": "videoplayback-1",
+      "startMs": 0,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "videoplayback-1-u0073",
+          "sourceId": "videoplayback-1",
+          "startMs": 7648.435374,
+          "durationMs": 130.249433,
+          "distance": 1.207979
+        },
+        {
+          "rank": 2,
+          "unitId": "videoplayback-1-u0007",
+          "sourceId": "videoplayback-1",
+          "startMs": 1028.208617,
+          "durationMs": 160,
+          "distance": 1.24492
+        },
+        {
+          "rank": 3,
+          "unitId": "videoplayback-1-u0071",
+          "sourceId": "videoplayback-1",
+          "startMs": 7367.256236,
+          "durationMs": 121.179138,
+          "distance": 1.303054
+        },
+        {
+          "rank": 4,
+          "unitId": "videoplayback-1-u0008",
+          "sourceId": "videoplayback-1",
+          "startMs": 1188.208617,
+          "durationMs": 100.498866,
+          "distance": 1.335011
+        },
+        {
+          "rank": 5,
+          "unitId": "videoplayback-1-u0058",
+          "sourceId": "videoplayback-1",
+          "startMs": 5688.888889,
+          "durationMs": 116.099773,
+          "distance": 1.344511
+        },
+        {
+          "rank": 6,
+          "unitId": "videoplayback-1-u0003",
+          "sourceId": "videoplayback-1",
+          "startMs": 459.319728,
+          "durationMs": 160,
+          "distance": 1.388928
+        },
+        {
+          "rank": 7,
+          "unitId": "videoplayback-2-u0072",
+          "sourceId": "videoplayback-2",
+          "startMs": 7541.405896,
+          "durationMs": 97.594104,
+          "distance": 1.396205
+        },
+        {
+          "rank": 8,
+          "unitId": "videoplayback-1-u0002",
+          "sourceId": "videoplayback-1",
+          "startMs": 299.319728,
+          "durationMs": 160,
+          "distance": 1.423244
+        },
+        {
+          "rank": 9,
+          "unitId": "videoplayback-2-u0070",
+          "sourceId": "videoplayback-2",
+          "startMs": 7221.405896,
+          "durationMs": 160,
+          "distance": 1.428712
+        },
+        {
+          "rank": 10,
+          "unitId": "videoplayback-1-u0004",
+          "sourceId": "videoplayback-1",
+          "startMs": 619.319728,
+          "durationMs": 88.888889,
+          "distance": 1.431822
+        }
+      ]
+    },
+    {
+      "queryUnitId": "videoplayback-1-u0054",
+      "sourceId": "videoplayback-1",
+      "startMs": 5398.639456,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "videoplayback-1-u0046",
+          "sourceId": "videoplayback-1",
+          "startMs": 4690.430839,
+          "durationMs": 92.879819,
+          "distance": 0.175216
+        },
+        {
+          "rank": 2,
+          "unitId": "videoplayback-1-u0048",
+          "sourceId": "videoplayback-1",
+          "startMs": 4876.190476,
+          "durationMs": 92.879819,
+          "distance": 0.176683
+        },
+        {
+          "rank": 3,
+          "unitId": "videoplayback-1-u0050",
+          "sourceId": "videoplayback-1",
+          "startMs": 5061.950113,
+          "durationMs": 92.879819,
+          "distance": 0.209795
+        },
+        {
+          "rank": 4,
+          "unitId": "videoplayback-1-u0053",
+          "sourceId": "videoplayback-1",
+          "startMs": 5328.979592,
+          "durationMs": 69.659864,
+          "distance": 0.247387
+        },
+        {
+          "rank": 5,
+          "unitId": "videoplayback-1-u0014",
+          "sourceId": "videoplayback-1",
+          "startMs": 1706.666667,
+          "durationMs": 116.099773,
+          "distance": 0.252153
+        },
+        {
+          "rank": 6,
+          "unitId": "videoplayback-1-u0055",
+          "sourceId": "videoplayback-1",
+          "startMs": 5468.29932,
+          "durationMs": 69.659864,
+          "distance": 0.258032
+        },
+        {
+          "rank": 7,
+          "unitId": "videoplayback-1-u0038",
+          "sourceId": "videoplayback-1",
+          "startMs": 3935.782313,
+          "durationMs": 92.879819,
+          "distance": 0.275389
+        },
+        {
+          "rank": 8,
+          "unitId": "videoplayback-1-u0041",
+          "sourceId": "videoplayback-1",
+          "startMs": 4214.421769,
+          "durationMs": 92.879819,
+          "distance": 0.276745
+        },
+        {
+          "rank": 9,
+          "unitId": "videoplayback-1-u0037",
+          "sourceId": "videoplayback-1",
+          "startMs": 3842.902494,
+          "durationMs": 92.879819,
+          "distance": 0.288582
+        },
+        {
+          "rank": 10,
+          "unitId": "videoplayback-1-u0051",
+          "sourceId": "videoplayback-1",
+          "startMs": 5154.829932,
+          "durationMs": 92.879819,
+          "distance": 0.29519
+        }
+      ]
+    },
+    {
+      "queryUnitId": "videoplayback-2-u0031",
+      "sourceId": "videoplayback-2",
+      "startMs": 4237.641723,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "videoplayback-2-u0030",
+          "sourceId": "videoplayback-2",
+          "startMs": 4179.591837,
+          "durationMs": 58.049887,
+          "distance": 0.10668
+        },
+        {
+          "rank": 2,
+          "unitId": "videoplayback-2-u0053",
+          "sourceId": "videoplayback-2",
+          "startMs": 5665.668934,
+          "durationMs": 58.049887,
+          "distance": 0.175395
+        },
+        {
+          "rank": 3,
+          "unitId": "videoplayback-2-u0033",
+          "sourceId": "videoplayback-2",
+          "startMs": 4365.351474,
+          "durationMs": 69.659864,
+          "distance": 0.188443
+        },
+        {
+          "rank": 4,
+          "unitId": "videoplayback-2-u0054",
+          "sourceId": "videoplayback-2",
+          "startMs": 5723.718821,
+          "durationMs": 69.659864,
+          "distance": 0.213307
+        },
+        {
+          "rank": 5,
+          "unitId": "videoplayback-2-u0035",
+          "sourceId": "videoplayback-2",
+          "startMs": 4493.061224,
+          "durationMs": 69.659864,
+          "distance": 0.217942
+        },
+        {
+          "rank": 6,
+          "unitId": "videoplayback-2-u0041",
+          "sourceId": "videoplayback-2",
+          "startMs": 4887.800454,
+          "durationMs": 58.049887,
+          "distance": 0.230856
+        },
+        {
+          "rank": 7,
+          "unitId": "videoplayback-2-u0055",
+          "sourceId": "videoplayback-2",
+          "startMs": 5793.378685,
+          "durationMs": 69.659864,
+          "distance": 0.243944
+        },
+        {
+          "rank": 8,
+          "unitId": "videoplayback-2-u0048",
+          "sourceId": "videoplayback-2",
+          "startMs": 5340.589569,
+          "durationMs": 58.049887,
+          "distance": 0.283788
+        },
+        {
+          "rank": 9,
+          "unitId": "videoplayback-2-u0052",
+          "sourceId": "videoplayback-2",
+          "startMs": 5596.00907,
+          "durationMs": 69.659864,
+          "distance": 0.28414
+        },
+        {
+          "rank": 10,
+          "unitId": "videoplayback-2-u0047",
+          "sourceId": "videoplayback-2",
+          "startMs": 5270.929705,
+          "durationMs": 69.659864,
+          "distance": 0.316924
+        }
+      ]
+    },
+    {
+      "queryUnitId": "videoplayback-u0012",
+      "sourceId": "videoplayback",
+      "startMs": 1130.666667,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "videoplayback-u0014",
+          "sourceId": "videoplayback",
+          "startMs": 1312,
+          "durationMs": 96,
+          "distance": 0.085248
+        },
+        {
+          "rank": 2,
+          "unitId": "videoplayback-u0010",
+          "sourceId": "videoplayback",
+          "startMs": 949.333333,
+          "durationMs": 96,
+          "distance": 0.088198
+        },
+        {
+          "rank": 3,
+          "unitId": "videoplayback-u0006",
+          "sourceId": "videoplayback",
+          "startMs": 586.666667,
+          "durationMs": 96,
+          "distance": 0.139864
+        },
+        {
+          "rank": 4,
+          "unitId": "videoplayback-u0005",
+          "sourceId": "videoplayback",
+          "startMs": 490.666667,
+          "durationMs": 96,
+          "distance": 0.157928
+        },
+        {
+          "rank": 5,
+          "unitId": "videoplayback-u0003",
+          "sourceId": "videoplayback",
+          "startMs": 298.666667,
+          "durationMs": 96,
+          "distance": 0.161241
+        },
+        {
+          "rank": 6,
+          "unitId": "videoplayback-u0013",
+          "sourceId": "videoplayback",
+          "startMs": 1226.666667,
+          "durationMs": 85.333333,
+          "distance": 0.175177
+        },
+        {
+          "rank": 7,
+          "unitId": "videoplayback-u0004",
+          "sourceId": "videoplayback",
+          "startMs": 394.666667,
+          "durationMs": 96,
+          "distance": 0.190456
+        },
+        {
+          "rank": 8,
+          "unitId": "videoplayback-u0011",
+          "sourceId": "videoplayback",
+          "startMs": 1045.333333,
+          "durationMs": 85.333333,
+          "distance": 0.191309
+        },
+        {
+          "rank": 9,
+          "unitId": "videoplayback-u0002",
+          "sourceId": "videoplayback",
+          "startMs": 202.666667,
+          "durationMs": 96,
+          "distance": 0.20383
+        },
+        {
+          "rank": 10,
+          "unitId": "videoplayback-u0007",
+          "sourceId": "videoplayback",
+          "startMs": 682.666667,
+          "durationMs": 85.333333,
+          "distance": 0.217056
+        }
+      ]
+    },
+    {
+      "queryUnitId": "videoplayback-u0065",
+      "sourceId": "videoplayback",
+      "startMs": 7328,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "videoplayback-u0021",
+          "sourceId": "videoplayback",
+          "startMs": 2101.333333,
+          "durationMs": 64,
+          "distance": 0.243995
+        },
+        {
+          "rank": 2,
+          "unitId": "videoplayback-u0029",
+          "sourceId": "videoplayback",
+          "startMs": 3072,
+          "durationMs": 96,
+          "distance": 0.327097
+        },
+        {
+          "rank": 3,
+          "unitId": "videoplayback-u0025",
+          "sourceId": "videoplayback",
+          "startMs": 2570.666667,
+          "durationMs": 85.333333,
+          "distance": 0.376382
+        },
+        {
+          "rank": 4,
+          "unitId": "videoplayback-u0027",
+          "sourceId": "videoplayback",
+          "startMs": 2816,
+          "durationMs": 96,
+          "distance": 0.390757
+        },
+        {
+          "rank": 5,
+          "unitId": "videoplayback-u0023",
+          "sourceId": "videoplayback",
+          "startMs": 2325.333333,
+          "durationMs": 85.333333,
+          "distance": 0.412314
+        },
+        {
+          "rank": 6,
+          "unitId": "videoplayback-u0047",
+          "sourceId": "videoplayback",
+          "startMs": 5546.666667,
+          "durationMs": 96,
+          "distance": 0.413303
+        },
+        {
+          "rank": 7,
+          "unitId": "videoplayback-u0045",
+          "sourceId": "videoplayback",
+          "startMs": 5312,
+          "durationMs": 74.666667,
+          "distance": 0.496435
+        },
+        {
+          "rank": 8,
+          "unitId": "videoplayback-u0040",
+          "sourceId": "videoplayback",
+          "startMs": 4746.666667,
+          "durationMs": 85.333333,
+          "distance": 0.529761
+        },
+        {
+          "rank": 9,
+          "unitId": "videoplayback-u0031",
+          "sourceId": "videoplayback",
+          "startMs": 3328,
+          "durationMs": 138.666667,
+          "distance": 0.536125
+        },
+        {
+          "rank": 10,
+          "unitId": "videoplayback-u0038",
+          "sourceId": "videoplayback",
+          "startMs": 4426.666667,
+          "durationMs": 160,
+          "distance": 0.623848
+        }
+      ]
+    }
+  ]
+}

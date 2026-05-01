@@ -3,10 +3,22 @@
   "version": "0.1.0",
   "private": true,
   "description": "Corpus-based audiovisual concatenative synthesis instrument",
+  "engines": {
+    "node": ">=22.6.0"
+  },
   "scripts": {
-    "build:corpus": "node tools/corpus-builder/index.js"
+    "build:corpus": "node tools/corpus-builder/index.ts",
+    "browse:corpus": "node tools/corpus-browser/server.js",
+    "health:corpus": "node tools/corpus-health/index.ts",
+    "golden:canaries:write": "node tools/golden-retrieval/index.ts --health ./reports/corpus-health/health-summary.json --snapshot ./test-fixtures/golden/canaries/retrieval-snapshot.json --write",
+    "test:golden:canaries": "node tools/golden-retrieval/index.ts --health ./reports/corpus-health/health-summary.json --snapshot ./test-fixtures/golden/canaries/retrieval-snapshot.json",
+    "verify": "npm run typecheck",
+    "typecheck": "npm run typecheck:src && npm run typecheck:tools",
+    "typecheck:src": "tsc --noEmit",
+    "typecheck:tools": "tsc -p tsconfig.tools.json --noEmit"
   },
   "devDependencies": {
+    "@types/node": "^22.5.0",
     "typescript": "^5.4.0"
   }
 }

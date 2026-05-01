@@ -117,31 +117,50 @@ type AVCorpus = {
   sources: CorpusSource[];
   units: AVUnit[];
   descriptorSchema: DescriptorSchema;
+  descriptorNormalization: DescriptorNormalization;
+  media: CorpusMediaSpec;
+  segmentation: CorpusSegmentationSpec;
+  embedding?: CorpusEmbeddingSpec;
 };
 
 type CorpusSource = {
   id: string;
   label: string;
+  durationMs: number;
+  sampleRate: number;
+  channelCount: number;
+  frameRate: number;
+  width: number;
+  height: number;
+  originalAsset?: string;
   audioAsset: string;
-  videoAsset: string;
-  atlasAsset?: string;
+  videoAsset?: string;
+  atlasAssets: string[];
 };
 
 type AVUnit = {
   id: string;
   sourceId: string;
+  sourceUnitIndex: number;
   startMs: number;
   durationMs: number;
   audioStartSample: number;
   audioSampleCount: number;
   videoStartFrame: number;
   videoFrameCount: number;
-  descriptors: {
-    audio: number[];
-    video: number[];
-    joint: number[];
-  };
+  videoAtlasSpans: VideoAtlasSpan[];
+  prevUnitId?: string;
+  nextUnitId?: string;
+  rawDescriptors?: DescriptorVectors;
+  descriptors: DescriptorVectors;
   embedding2D?: [number, number];
+};
+
+type VideoAtlasSpan = {
+  asset: string;
+  startTileIndex: number;
+  frameCount: number;
+  sourceStartFrame: number;
 };
 ```
 
@@ -169,23 +188,46 @@ Joint:
 - attackness
 - audiovisual roughness or contrast proxy
 
+Descriptor values used for retrieval must be normalized by the corpus builder.
+Store the normalization parameters in `descriptorNormalization` so runtime queries
+can be mapped into the same space as corpus units. Keep optional raw descriptors
+only for inspection and debugging.
+
+Initial joint descriptor formulas:
+
+- `activity`: normalized audio RMS and normalized video motion magnitude, averaged
+- `attackness`: normalized audio spectral flux and normalized frame-difference energy, averaged
+- `avRoughnessProxy`: normalized spectral flatness and normalized edge density, averaged
+
+These formulas are intentionally simple for v1. They should be easy to inspect,
+replace, and tune after the corpus browser shows whether they match perception.
+
 ## Playback Model
 
 Audio side:
 
 - keep `AudioWorklet`
-- replace live ring-buffer reads with unit playback from decoded corpus buffers
+- replace live ring-buffer reads with unit playback from decoded source audio buffers
+- use one exported audio file per source, with units referencing sample ranges
 - each scheduled event still uses grain envelopes, overlap, pan, and gain
 
 Video side:
 
 - do not depend on free-running webcam history as the primary source
-- play pre-segmented visual units from packed frames or short clip ranges
+- for v1, use sprite-sheet frame atlases (`png` or `webp`) generated offline
+- each unit must store explicit atlas spans so runtime lookup does not require source-video seeking or filename inference
+- keep the first corpus small enough for atlas playback, roughly `200` to `500` units
 - composite overlapping units on the GPU with windowing, opacity, scale, offset, and blend logic
 
 Important distinction:
 
 - the visual result can still look granular, but it should be built from chosen corpus units, not from synthetic history smearing
+
+Initial latency targets:
+
+- gesture-to-scheduled-event should stay under `50` ms for v1
+- audio/video onset skew should stay below one rendered frame
+- denser or rhythmically precise modes can tighten this later, but v1 should first prove coherent matched retrieval
 
 ## Repo-Shaped Direction
 
@@ -208,6 +250,37 @@ Suggested shape inside `src/granular-av/` or a later extracted repo:
 Keep the existing live granular runtime intact until the concatenative path proves itself.
 
 ## Phases
+
+## Current Prototype Status
+
+The implementation has advanced beyond the original Phase 1/2 boundary.
+
+Completed or mostly complete:
+
+- Phase 1 corpus builder: local video ingestion, segmentation, descriptors, normalization, WAV export, atlas export, adjacency, `corpus.json`
+- Phase 2 browser/visualizer: corpus loading, descriptor inspection, scatterplot browsing
+
+Started early:
+
+- Phase 3 retrieval: weighted distance modes, top-k nearest rows, descriptor-axis XY mapping, repetition penalty, source-switch penalty
+- Phase 4 scheduler: controllable grain rate, candidate sampling through neighbor jitter, continuity probability, freeze mode, stutter mode
+- Phase 5 audio player: decoded source-buffer playback, gain, envelopes, overlap, pitch-rate transposition, voice limiting, feedback/decay delay bus
+- Phase 6 matched AV player: one scheduled unit id drives both audio and video
+- Phase 7 video unit player: concurrent atlas-backed visual grains, duration envelopes, blend modes, black backdrop, feedback/decay trails
+- Phase 8 instrument UI: performance layout with large video preview, compact XY plot, grain controls, retrieval penalties, scheduler modes
+
+Still missing or intentionally rough:
+
+- sample-accurate `AudioWorklet` playback for dense scheduling
+- typed reusable runtime modules outside `tools/corpus-browser`
+- live input as query/control only
+- perceptual tuning of segmentation, descriptor weights, penalties, and scheduler modes against real material
+
+Near-term priority:
+
+- keep prototype changes scoped while behavior is still being auditioned
+- keep tuning grounded in perceptual notes from real multi-source corpora
+- later, consolidate stable runtime behavior into typed reusable modules
 
 ## Phase 0: Freeze The Current GranularAV
 
@@ -235,15 +308,21 @@ Goal:
 Tasks:
 
 - choose 3 to 10 short source files with strong audiovisual identity
-- segment into units around `60` to `240` ms
+- segment into units using hybrid onset-aligned segmentation
+- constrain units to `60` to `240` ms, with `120` ms as the initial target
 - extract descriptors per unit
+- normalize descriptors and store the normalization parameters in `corpus.json`
+- compute a simple 2D embedding from normalized descriptor vectors for browsing
 - export `corpus.json`
-- export audio assets and either frame atlases or short visual clips
+- export one decoded audio asset per source
+- export frame atlases for v1 video playback
+- store each unit's atlas asset and tile-span references
 
 Implementation note:
 
 - this should be a Node/tooling script, not browser code
 - `ffmpeg` is the practical base for segmentation and frame export
+- temporal adjacency must be stored as `prevUnitId` / `nextUnitId` or equivalent source order data
 
 Definition of done:
 
@@ -278,7 +357,7 @@ Goal:
 
 Tasks:
 
-- implement weighted distance over the joint descriptor vector
+- implement weighted distance over normalized audio, video, and joint descriptor vectors
 - add top-k retrieval
 - add repetition penalty
 - add source-switch penalty
@@ -331,7 +410,25 @@ Definition of done:
 - audio playback survives dense overlap without collapse
 - unit timing is stable enough for rhythmic and textural playing
 
-## Phase 6: Video Unit Player
+## Phase 6: Minimal Matched AV Player
+
+Goal:
+
+- test the core thesis before polishing either channel separately
+
+Tasks:
+
+- schedule one event that drives both audio and video from the same `unitId`
+- play source-buffer audio ranges and atlas-backed video ranges together
+- verify that descriptor retrieval produces perceptible audiovisual correspondence
+- measure gesture-to-event latency and choose an explicit target budget
+
+Definition of done:
+
+- a selected unit is audibly and visibly the same corpus event
+- the system exposes whether retrieval feels coherent before renderer polish begins
+
+## Phase 7: Video Unit Player
 
 Goal:
 
@@ -350,7 +447,7 @@ Definition of done:
 - visual events clearly correspond to the selected corpus units
 - overlap reads as granular layering rather than generic video feedback
 
-## Phase 7: Instrument UI
+## Phase 8: Instrument UI
 
 Goal:
 
@@ -376,7 +473,7 @@ Definition of done:
 
 - the instrument can be played without exposing analysis internals every time
 
-## Phase 8: Live Input Returns As Query Only
+## Phase 9: Live Input Returns As Query Only
 
 Goal:
 
