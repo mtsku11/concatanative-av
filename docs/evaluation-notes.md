@@ -3,42 +3,38 @@
 Use this file for concrete perceptual observations that should guide tuning.
 Keep notes tied to a named corpus and the controls used during the pass.
 
-## Canary Corpus
+## Web Demo Corpus
 
-Date: 2026-04-30
+Date: 2026-05-02
 
 Sources:
 
-- `videoplayback (1).mp4`
-- `videoplayback (2).mp4`
-- `videoplayback.mp4`
+- `nixon-not-a-crook.mp4`
 
 Build:
 
 - `min-duration-ms`: `50`
 - `target-duration-ms`: `90`
 - `max-duration-ms`: `160`
-- units: `215`
+- units: `293`
 
 Health:
 
 - corpus health report passed with `0` issues and `0` warnings
-- contact sheets show the correct canary/bird source material
+- contact sheets show the expected source material
 - descriptor distributions are finite, normalized, and non-flat
 
 Listening/viewing notes:
 
-- `Audio / pitchHz (log raw)` against itself gives a broadly coherent pitch ordering.
-- `Pitch Gate` around `0.86` improves pitch-focused auditioning.
-- Pitch ordering is approximate rather than exact, which is expected for fast canary song syllables and trills.
-- `Pitch Focus` and `Audio Focus` sound very similar with `Pitch Gate` around `0.86`, `Neighbor Jitter` at `0`, and `Continuity` at `0`.
-- The similarity between Pitch Focus and Audio Focus is likely because this corpus is homogeneous birdsong, so pitch-related descriptors dominate the useful audio variation.
+- `Audio / pitchHz (log raw)` against itself gives a broadly coherent vocal pitch ordering.
+- `Pitch Gate` remains useful for removing lower-confidence speech fragments from pitch-focused auditioning.
+- Pitch ordering is approximate rather than exact, which is expected for short spoken syllables and noisy consonants.
+- `Pitch Focus` and `Audio Focus` now separate more clearly than they did with the older birdsong source.
 - `Video Focus` with `motionMagnitude` against `motionMagnitude` behaves like a coherent low-to-high motion scale.
 - `motionMagnitude` against `frameDiffEnergy` shows a related but messier trajectory, as expected.
-- A small number of video outliers appear to be camera shake rather than descriptor extraction failures.
+- A small number of video outliers appear to be sharp edit/motion changes rather than descriptor extraction failures.
 
 Interpretation:
 
-- Treat this as a useful audio/pitch regression corpus and a basic video descriptor sanity corpus.
-- Do not treat it as the only AV-motion evaluation corpus because the birds are mostly stationary while singing.
-- Add a second small corpus with obvious visual motion before tuning video-driven retrieval behavior.
+- Treat this as a useful speech/gesture regression corpus and a basic video descriptor sanity corpus.
+- Do not treat it as the only evaluation corpus; a later multi-source corpus will still be needed for cross-source retrieval tuning.

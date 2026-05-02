@@ -1,484 +1,458 @@
 {
   "version": 1,
   "name": "canaries",
-  "createdAt": "2026-04-30T10:31:14.044Z",
+  "createdAt": "2026-05-02T10:14:42.729Z",
   "sourceLabels": [
-    "videoplayback (1).mp4",
-    "videoplayback (2).mp4",
-    "videoplayback.mp4"
+    "nixon-not-a-crook.mp4"
   ],
   "sourceMetadata": [
     {
-      "label": "videoplayback (1).mp4",
-      "durationMs": 7988,
+      "label": "nixon-not-a-crook.mp4",
+      "durationMs": 36800,
       "frameRate": 30,
-      "width": 360,
-      "height": 640,
+      "width": 320,
+      "height": 240,
       "sampleRate": 44100,
-      "channelCount": 2,
-      "videoCodec": "h264",
-      "audioCodec": "aac",
-      "container": "mov,mp4,m4a,3gp,3g2,mj2"
-    },
-    {
-      "label": "videoplayback (2).mp4",
-      "durationMs": 7639,
-      "frameRate": 30,
-      "width": 360,
-      "height": 640,
-      "sampleRate": 44100,
-      "channelCount": 2,
-      "videoCodec": "h264",
-      "audioCodec": "aac",
-      "container": "mov,mp4,m4a,3gp,3g2,mj2"
-    },
-    {
-      "label": "videoplayback.mp4",
-      "durationMs": 7488,
-      "frameRate": 30,
-      "width": 360,
-      "height": 640,
-      "sampleRate": 48000,
       "channelCount": 2,
       "videoCodec": "h264",
       "audioCodec": "aac",
       "container": "mov,mp4,m4a,3gp,3g2,mj2"
     }
   ],
-  "unitCount": 215,
+  "unitCount": 293,
   "queries": [
     {
-      "queryUnitId": "videoplayback-1-u0000",
-      "sourceId": "videoplayback-1",
+      "queryUnitId": "nixon-not-a-crook-u0000",
+      "sourceId": "nixon-not-a-crook",
       "startMs": 0,
       "matches": [
         {
           "rank": 1,
-          "unitId": "videoplayback-1-u0073",
-          "sourceId": "videoplayback-1",
-          "startMs": 7648.435374,
-          "durationMs": 130.249433,
-          "distance": 1.207979
+          "unitId": "nixon-not-a-crook-u0016",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 1718.276644,
+          "durationMs": 92.879819,
+          "distance": 1.358914
         },
         {
           "rank": 2,
-          "unitId": "videoplayback-1-u0007",
-          "sourceId": "videoplayback-1",
-          "startMs": 1028.208617,
-          "durationMs": 160,
-          "distance": 1.24492
+          "unitId": "nixon-not-a-crook-u0017",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 1811.156463,
+          "durationMs": 92.879819,
+          "distance": 1.411617
         },
         {
           "rank": 3,
-          "unitId": "videoplayback-1-u0071",
-          "sourceId": "videoplayback-1",
-          "startMs": 7367.256236,
-          "durationMs": 121.179138,
-          "distance": 1.303054
+          "unitId": "nixon-not-a-crook-u0019",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 2054.965986,
+          "durationMs": 160,
+          "distance": 1.502443
         },
         {
           "rank": 4,
-          "unitId": "videoplayback-1-u0008",
-          "sourceId": "videoplayback-1",
-          "startMs": 1188.208617,
+          "unitId": "nixon-not-a-crook-u0001",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 160,
+          "durationMs": 160,
+          "distance": 1.502648
+        },
+        {
+          "rank": 5,
+          "unitId": "nixon-not-a-crook-u0030",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 3366.893424,
+          "durationMs": 160,
+          "distance": 1.523883
+        },
+        {
+          "rank": 6,
+          "unitId": "nixon-not-a-crook-u0023",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 2635.464853,
+          "durationMs": 127.709751,
+          "distance": 1.539202
+        },
+        {
+          "rank": 7,
+          "unitId": "nixon-not-a-crook-u0004",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 640,
+          "durationMs": 79.818594,
+          "distance": 1.566574
+        },
+        {
+          "rank": 8,
+          "unitId": "nixon-not-a-crook-u0022",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 2534.965986,
           "durationMs": 100.498866,
-          "distance": 1.335011
-        },
-        {
-          "rank": 5,
-          "unitId": "videoplayback-1-u0058",
-          "sourceId": "videoplayback-1",
-          "startMs": 5688.888889,
-          "durationMs": 116.099773,
-          "distance": 1.344511
-        },
-        {
-          "rank": 6,
-          "unitId": "videoplayback-1-u0003",
-          "sourceId": "videoplayback-1",
-          "startMs": 459.319728,
-          "durationMs": 160,
-          "distance": 1.388928
-        },
-        {
-          "rank": 7,
-          "unitId": "videoplayback-2-u0072",
-          "sourceId": "videoplayback-2",
-          "startMs": 7541.405896,
-          "durationMs": 97.594104,
-          "distance": 1.396205
-        },
-        {
-          "rank": 8,
-          "unitId": "videoplayback-1-u0002",
-          "sourceId": "videoplayback-1",
-          "startMs": 299.319728,
-          "durationMs": 160,
-          "distance": 1.423244
+          "distance": 1.57283
         },
         {
           "rank": 9,
-          "unitId": "videoplayback-2-u0070",
-          "sourceId": "videoplayback-2",
-          "startMs": 7221.405896,
+          "unitId": "nixon-not-a-crook-u0020",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 2214.965986,
           "durationMs": 160,
-          "distance": 1.428712
+          "distance": 1.574527
         },
         {
           "rank": 10,
-          "unitId": "videoplayback-1-u0004",
-          "sourceId": "videoplayback-1",
-          "startMs": 619.319728,
-          "durationMs": 88.888889,
-          "distance": 1.431822
+          "unitId": "nixon-not-a-crook-u0018",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 1904.036281,
+          "durationMs": 150.929705,
+          "distance": 1.578287
         }
       ]
     },
     {
-      "queryUnitId": "videoplayback-1-u0054",
-      "sourceId": "videoplayback-1",
-      "startMs": 5398.639456,
+      "queryUnitId": "nixon-not-a-crook-u0073",
+      "sourceId": "nixon-not-a-crook",
+      "startMs": 8521.723356,
       "matches": [
         {
           "rank": 1,
-          "unitId": "videoplayback-1-u0046",
-          "sourceId": "videoplayback-1",
-          "startMs": 4690.430839,
-          "durationMs": 92.879819,
-          "distance": 0.175216
+          "unitId": "nixon-not-a-crook-u0207",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 25785.759637,
+          "durationMs": 160,
+          "distance": 0.14669
         },
         {
           "rank": 2,
-          "unitId": "videoplayback-1-u0048",
-          "sourceId": "videoplayback-1",
-          "startMs": 4876.190476,
-          "durationMs": 92.879819,
-          "distance": 0.176683
+          "unitId": "nixon-not-a-crook-u0085",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 10077.460317,
+          "durationMs": 160,
+          "distance": 0.148139
         },
         {
           "rank": 3,
-          "unitId": "videoplayback-1-u0050",
-          "sourceId": "videoplayback-1",
-          "startMs": 5061.950113,
-          "durationMs": 92.879819,
-          "distance": 0.209795
+          "unitId": "nixon-not-a-crook-u0233",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28874.013605,
+          "durationMs": 104.489796,
+          "distance": 0.148543
         },
         {
           "rank": 4,
-          "unitId": "videoplayback-1-u0053",
-          "sourceId": "videoplayback-1",
-          "startMs": 5328.979592,
-          "durationMs": 69.659864,
-          "distance": 0.247387
+          "unitId": "nixon-not-a-crook-u0048",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 5549.569161,
+          "durationMs": 58.049887,
+          "distance": 0.15571
         },
         {
           "rank": 5,
-          "unitId": "videoplayback-1-u0014",
-          "sourceId": "videoplayback-1",
-          "startMs": 1706.666667,
-          "durationMs": 116.099773,
-          "distance": 0.252153
+          "unitId": "nixon-not-a-crook-u0229",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28432.834467,
+          "durationMs": 160,
+          "distance": 0.162631
         },
         {
           "rank": 6,
-          "unitId": "videoplayback-1-u0055",
-          "sourceId": "videoplayback-1",
-          "startMs": 5468.29932,
-          "durationMs": 69.659864,
-          "distance": 0.258032
+          "unitId": "nixon-not-a-crook-u0106",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 12585.21542,
+          "durationMs": 104.489796,
+          "distance": 0.166651
         },
         {
           "rank": 7,
-          "unitId": "videoplayback-1-u0038",
-          "sourceId": "videoplayback-1",
-          "startMs": 3935.782313,
-          "durationMs": 92.879819,
-          "distance": 0.275389
+          "unitId": "nixon-not-a-crook-u0163",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 20387.120181,
+          "durationMs": 160,
+          "distance": 0.171655
         },
         {
           "rank": 8,
-          "unitId": "videoplayback-1-u0041",
-          "sourceId": "videoplayback-1",
-          "startMs": 4214.421769,
-          "durationMs": 92.879819,
-          "distance": 0.276745
+          "unitId": "nixon-not-a-crook-u0206",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 25713.560091,
+          "durationMs": 72.199546,
+          "distance": 0.174444
         },
         {
           "rank": 9,
-          "unitId": "videoplayback-1-u0037",
-          "sourceId": "videoplayback-1",
-          "startMs": 3842.902494,
-          "durationMs": 92.879819,
-          "distance": 0.288582
+          "unitId": "nixon-not-a-crook-u0246",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 30557.460317,
+          "durationMs": 160,
+          "distance": 0.178728
         },
         {
           "rank": 10,
-          "unitId": "videoplayback-1-u0051",
-          "sourceId": "videoplayback-1",
+          "unitId": "nixon-not-a-crook-u0136",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 16683.537415,
+          "durationMs": 160,
+          "distance": 0.18311
+        }
+      ]
+    },
+    {
+      "queryUnitId": "nixon-not-a-crook-u0146",
+      "sourceId": "nixon-not-a-crook",
+      "startMs": 17925.804989,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "nixon-not-a-crook-u0046",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 5236.099773,
+          "durationMs": 160,
+          "distance": 0.14386
+        },
+        {
+          "rank": 2,
+          "unitId": "nixon-not-a-crook-u0292",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 36699.138322,
+          "durationMs": 104.861678,
+          "distance": 0.146429
+        },
+        {
+          "rank": 3,
+          "unitId": "nixon-not-a-crook-u0106",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 12585.21542,
+          "durationMs": 104.489796,
+          "distance": 0.149617
+        },
+        {
+          "rank": 4,
+          "unitId": "nixon-not-a-crook-u0237",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 29257.142857,
+          "durationMs": 160,
+          "distance": 0.155564
+        },
+        {
+          "rank": 5,
+          "unitId": "nixon-not-a-crook-u0226",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28142.585034,
+          "durationMs": 160,
+          "distance": 0.155782
+        },
+        {
+          "rank": 6,
+          "unitId": "nixon-not-a-crook-u0231",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28688.253968,
+          "durationMs": 92.879819,
+          "distance": 0.168131
+        },
+        {
+          "rank": 7,
+          "unitId": "nixon-not-a-crook-u0082",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 9775.600907,
+          "durationMs": 160,
+          "distance": 0.176416
+        },
+        {
+          "rank": 8,
+          "unitId": "nixon-not-a-crook-u0163",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 20387.120181,
+          "durationMs": 160,
+          "distance": 0.185201
+        },
+        {
+          "rank": 9,
+          "unitId": "nixon-not-a-crook-u0123",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 14930.430839,
+          "durationMs": 127.709751,
+          "distance": 0.186301
+        },
+        {
+          "rank": 10,
+          "unitId": "nixon-not-a-crook-u0136",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 16683.537415,
+          "durationMs": 160,
+          "distance": 0.188316
+        }
+      ]
+    },
+    {
+      "queryUnitId": "nixon-not-a-crook-u0219",
+      "sourceId": "nixon-not-a-crook",
+      "startMs": 27178.956916,
+      "matches": [
+        {
+          "rank": 1,
+          "unitId": "nixon-not-a-crook-u0045",
+          "sourceId": "nixon-not-a-crook",
           "startMs": 5154.829932,
-          "durationMs": 92.879819,
-          "distance": 0.29519
-        }
-      ]
-    },
-    {
-      "queryUnitId": "videoplayback-2-u0031",
-      "sourceId": "videoplayback-2",
-      "startMs": 4237.641723,
-      "matches": [
-        {
-          "rank": 1,
-          "unitId": "videoplayback-2-u0030",
-          "sourceId": "videoplayback-2",
-          "startMs": 4179.591837,
-          "durationMs": 58.049887,
-          "distance": 0.10668
+          "durationMs": 81.269841,
+          "distance": 0.099664
         },
         {
           "rank": 2,
-          "unitId": "videoplayback-2-u0053",
-          "sourceId": "videoplayback-2",
-          "startMs": 5665.668934,
-          "durationMs": 58.049887,
-          "distance": 0.175395
+          "unitId": "nixon-not-a-crook-u0103",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 12341.405896,
+          "durationMs": 104.489796,
+          "distance": 0.100497
         },
         {
           "rank": 3,
-          "unitId": "videoplayback-2-u0033",
-          "sourceId": "videoplayback-2",
-          "startMs": 4365.351474,
-          "durationMs": 69.659864,
-          "distance": 0.188443
+          "unitId": "nixon-not-a-crook-u0183",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 22952.92517,
+          "durationMs": 81.269841,
+          "distance": 0.130313
         },
         {
           "rank": 4,
-          "unitId": "videoplayback-2-u0054",
-          "sourceId": "videoplayback-2",
-          "startMs": 5723.718821,
-          "durationMs": 69.659864,
-          "distance": 0.213307
-        },
-        {
-          "rank": 5,
-          "unitId": "videoplayback-2-u0035",
-          "sourceId": "videoplayback-2",
-          "startMs": 4493.061224,
-          "durationMs": 69.659864,
-          "distance": 0.217942
-        },
-        {
-          "rank": 6,
-          "unitId": "videoplayback-2-u0041",
-          "sourceId": "videoplayback-2",
+          "unitId": "nixon-not-a-crook-u0042",
+          "sourceId": "nixon-not-a-crook",
           "startMs": 4887.800454,
           "durationMs": 58.049887,
-          "distance": 0.230856
+          "distance": 0.133677
+        },
+        {
+          "rank": 5,
+          "unitId": "nixon-not-a-crook-u0102",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 12225.306122,
+          "durationMs": 116.099773,
+          "distance": 0.148884
+        },
+        {
+          "rank": 6,
+          "unitId": "nixon-not-a-crook-u0255",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 31741.678005,
+          "durationMs": 116.099773,
+          "distance": 0.165422
         },
         {
           "rank": 7,
-          "unitId": "videoplayback-2-u0055",
-          "sourceId": "videoplayback-2",
-          "startMs": 5793.378685,
-          "durationMs": 69.659864,
-          "distance": 0.243944
+          "unitId": "nixon-not-a-crook-u0117",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 14106.122449,
+          "durationMs": 92.879819,
+          "distance": 0.171538
         },
         {
           "rank": 8,
-          "unitId": "videoplayback-2-u0048",
-          "sourceId": "videoplayback-2",
-          "startMs": 5340.589569,
-          "durationMs": 58.049887,
-          "distance": 0.283788
+          "unitId": "nixon-not-a-crook-u0224",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 27898.77551,
+          "durationMs": 104.489796,
+          "distance": 0.184237
         },
         {
           "rank": 9,
-          "unitId": "videoplayback-2-u0052",
-          "sourceId": "videoplayback-2",
-          "startMs": 5596.00907,
-          "durationMs": 69.659864,
-          "distance": 0.28414
+          "unitId": "nixon-not-a-crook-u0125",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 15218.14059,
+          "durationMs": 107.029478,
+          "distance": 0.190702
         },
         {
           "rank": 10,
-          "unitId": "videoplayback-2-u0047",
-          "sourceId": "videoplayback-2",
-          "startMs": 5270.929705,
-          "durationMs": 69.659864,
-          "distance": 0.316924
+          "unitId": "nixon-not-a-crook-u0225",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28003.265306,
+          "durationMs": 139.319728,
+          "distance": 0.197223
         }
       ]
     },
     {
-      "queryUnitId": "videoplayback-u0012",
-      "sourceId": "videoplayback",
-      "startMs": 1130.666667,
+      "queryUnitId": "nixon-not-a-crook-u0292",
+      "sourceId": "nixon-not-a-crook",
+      "startMs": 36699.138322,
       "matches": [
         {
           "rank": 1,
-          "unitId": "videoplayback-u0014",
-          "sourceId": "videoplayback",
-          "startMs": 1312,
-          "durationMs": 96,
-          "distance": 0.085248
-        },
-        {
-          "rank": 2,
-          "unitId": "videoplayback-u0010",
-          "sourceId": "videoplayback",
-          "startMs": 949.333333,
-          "durationMs": 96,
-          "distance": 0.088198
-        },
-        {
-          "rank": 3,
-          "unitId": "videoplayback-u0006",
-          "sourceId": "videoplayback",
-          "startMs": 586.666667,
-          "durationMs": 96,
-          "distance": 0.139864
-        },
-        {
-          "rank": 4,
-          "unitId": "videoplayback-u0005",
-          "sourceId": "videoplayback",
-          "startMs": 490.666667,
-          "durationMs": 96,
-          "distance": 0.157928
-        },
-        {
-          "rank": 5,
-          "unitId": "videoplayback-u0003",
-          "sourceId": "videoplayback",
-          "startMs": 298.666667,
-          "durationMs": 96,
-          "distance": 0.161241
-        },
-        {
-          "rank": 6,
-          "unitId": "videoplayback-u0013",
-          "sourceId": "videoplayback",
-          "startMs": 1226.666667,
-          "durationMs": 85.333333,
-          "distance": 0.175177
-        },
-        {
-          "rank": 7,
-          "unitId": "videoplayback-u0004",
-          "sourceId": "videoplayback",
-          "startMs": 394.666667,
-          "durationMs": 96,
-          "distance": 0.190456
-        },
-        {
-          "rank": 8,
-          "unitId": "videoplayback-u0011",
-          "sourceId": "videoplayback",
-          "startMs": 1045.333333,
-          "durationMs": 85.333333,
-          "distance": 0.191309
-        },
-        {
-          "rank": 9,
-          "unitId": "videoplayback-u0002",
-          "sourceId": "videoplayback",
-          "startMs": 202.666667,
-          "durationMs": 96,
-          "distance": 0.20383
-        },
-        {
-          "rank": 10,
-          "unitId": "videoplayback-u0007",
-          "sourceId": "videoplayback",
-          "startMs": 682.666667,
-          "durationMs": 85.333333,
-          "distance": 0.217056
-        }
-      ]
-    },
-    {
-      "queryUnitId": "videoplayback-u0065",
-      "sourceId": "videoplayback",
-      "startMs": 7328,
-      "matches": [
-        {
-          "rank": 1,
-          "unitId": "videoplayback-u0021",
-          "sourceId": "videoplayback",
-          "startMs": 2101.333333,
-          "durationMs": 64,
-          "distance": 0.243995
-        },
-        {
-          "rank": 2,
-          "unitId": "videoplayback-u0029",
-          "sourceId": "videoplayback",
-          "startMs": 3072,
-          "durationMs": 96,
-          "distance": 0.327097
-        },
-        {
-          "rank": 3,
-          "unitId": "videoplayback-u0025",
-          "sourceId": "videoplayback",
-          "startMs": 2570.666667,
-          "durationMs": 85.333333,
-          "distance": 0.376382
-        },
-        {
-          "rank": 4,
-          "unitId": "videoplayback-u0027",
-          "sourceId": "videoplayback",
-          "startMs": 2816,
-          "durationMs": 96,
-          "distance": 0.390757
-        },
-        {
-          "rank": 5,
-          "unitId": "videoplayback-u0023",
-          "sourceId": "videoplayback",
-          "startMs": 2325.333333,
-          "durationMs": 85.333333,
-          "distance": 0.412314
-        },
-        {
-          "rank": 6,
-          "unitId": "videoplayback-u0047",
-          "sourceId": "videoplayback",
-          "startMs": 5546.666667,
-          "durationMs": 96,
-          "distance": 0.413303
-        },
-        {
-          "rank": 7,
-          "unitId": "videoplayback-u0045",
-          "sourceId": "videoplayback",
-          "startMs": 5312,
-          "durationMs": 74.666667,
-          "distance": 0.496435
-        },
-        {
-          "rank": 8,
-          "unitId": "videoplayback-u0040",
-          "sourceId": "videoplayback",
-          "startMs": 4746.666667,
-          "durationMs": 85.333333,
-          "distance": 0.529761
-        },
-        {
-          "rank": 9,
-          "unitId": "videoplayback-u0031",
-          "sourceId": "videoplayback",
-          "startMs": 3328,
-          "durationMs": 138.666667,
-          "distance": 0.536125
-        },
-        {
-          "rank": 10,
-          "unitId": "videoplayback-u0038",
-          "sourceId": "videoplayback",
-          "startMs": 4426.666667,
+          "unitId": "nixon-not-a-crook-u0237",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 29257.142857,
           "durationMs": 160,
-          "distance": 0.623848
+          "distance": 0.127694
+        },
+        {
+          "rank": 2,
+          "unitId": "nixon-not-a-crook-u0231",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28688.253968,
+          "durationMs": 92.879819,
+          "distance": 0.141754
+        },
+        {
+          "rank": 3,
+          "unitId": "nixon-not-a-crook-u0146",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 17925.804989,
+          "durationMs": 69.659864,
+          "distance": 0.146429
+        },
+        {
+          "rank": 4,
+          "unitId": "nixon-not-a-crook-u0046",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 5236.099773,
+          "durationMs": 160,
+          "distance": 0.148777
+        },
+        {
+          "rank": 5,
+          "unitId": "nixon-not-a-crook-u0123",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 14930.430839,
+          "durationMs": 127.709751,
+          "distance": 0.160026
+        },
+        {
+          "rank": 6,
+          "unitId": "nixon-not-a-crook-u0106",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 12585.21542,
+          "durationMs": 104.489796,
+          "distance": 0.168282
+        },
+        {
+          "rank": 7,
+          "unitId": "nixon-not-a-crook-u0226",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 28142.585034,
+          "durationMs": 160,
+          "distance": 0.178109
+        },
+        {
+          "rank": 8,
+          "unitId": "nixon-not-a-crook-u0119",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 14291.882086,
+          "durationMs": 160,
+          "distance": 0.217919
+        },
+        {
+          "rank": 9,
+          "unitId": "nixon-not-a-crook-u0191",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 24102.312925,
+          "durationMs": 92.879819,
+          "distance": 0.221888
+        },
+        {
+          "rank": 10,
+          "unitId": "nixon-not-a-crook-u0082",
+          "sourceId": "nixon-not-a-crook",
+          "startMs": 9775.600907,
+          "durationMs": 160,
+          "distance": 0.224457
         }
       ]
     }
