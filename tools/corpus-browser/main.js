@@ -89,6 +89,9 @@ const elements = {
 const scatterContext = elements.scatterCanvas.getContext("2d");
 
 async function boot() {
+  if (typeof window !== "undefined" && window.app?.isElectron) {
+    document.body.dataset.mode = "production";
+  }
   bindEvents();
   updateGrainControlOutputs();
   updateVideoControlOutputs();

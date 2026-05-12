@@ -470,3 +470,13 @@ h2 {
     flex-direction: column;
   }
 }
+
+/* Production mode: hide research/debug panels. Elements remain in the DOM
+   so JS can still write to them; only their visibility is suppressed. */
+body[data-mode="production"] .descriptor-panel,
+body[data-mode="production"] .scatter-panel,
+body[data-mode="production"] .list-panel,
+body[data-mode="production"] #status-line,
+body[data-mode="production"] #video-status {
+  display: none;
+}

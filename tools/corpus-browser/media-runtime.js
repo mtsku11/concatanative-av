@@ -331,6 +331,7 @@ export class AtlasVideoRenderer {
     }
 
     let drawnGrainCount = 0;
+    const trailsActive = this.visualFeedback.amount > 0;
     for (const grain of this.visualGrains) {
       if (now < grain.startTime) {
         continue;
@@ -353,9 +354,11 @@ export class AtlasVideoRenderer {
 
       this.context.save();
       this.context.globalAlpha = opacity;
-      this.context.globalCompositeOperation = drawnGrainCount === 0
-        ? "source-over"
-        : compositeOperationForBlendMode(grain.blendMode);
+      this.context.globalCompositeOperation = trailsActive
+        ? compositeOperationForBlendMode(grain.blendMode)
+        : (drawnGrainCount === 0
+            ? "source-over"
+            : compositeOperationForBlendMode(grain.blendMode));
       this.drawAtlasTileToContext(this.context, frame.image, frame.tileIndex);
       this.context.restore();
       drawnGrainCount += 1;
@@ -384,7 +387,9 @@ export class AtlasVideoRenderer {
       this.beginCrossfade(crossfadeMs);
     }
     this.resizeCanvasesForDisplay();
-    this.paintBlackBackdrop(this.context, this.canvas);
+    if (this.visualFeedback.amount <= 0) {
+      this.paintBlackBackdrop(this.context, this.canvas);
+    }
     this.drawAtlasTileToContext(this.context, image, tileIndex);
   }
 
@@ -482,7 +487,7 @@ export class AtlasVideoRenderer {
       : 1 / 60;
     this.lastVisualRenderAt = now;
 
-    const effectiveDecaySeconds = Math.max(0.04, decaySeconds / Math.max(0.12, feedbackAmount));
+    const effectiveDecaySeconds = Math.max(0.04, decaySeconds * (0.25 + feedbackAmount * 4));
     const fadeAlpha = clamp(elapsedSeconds / effectiveDecaySeconds, 0.006, 1);
     this.context.save();
     this.context.globalAlpha = fadeAlpha;
